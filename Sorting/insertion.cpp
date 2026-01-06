@@ -10,10 +10,25 @@ void insertion_sort(int arr[],int n){
         }
     }
 }
+// PRACTISE
+void insertionSort(int arr[],int n){
+    for(int i=0;i<n;i++){
+        int j=i;
+        while(j>0 && arr[j-1]>arr[j]){
+            swap(arr[j-1],arr[j]);
+            j--;
+        }
+    }
+}
 int main() {
     int n=6;
     int arr[n]={-1,22,3,42,5,43};
     insertion_sort(arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    insertionSort(arr,n);
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }

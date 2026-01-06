@@ -162,6 +162,20 @@ Node* deleteFromBSt(Node* root, int d){
     }
 }
 
+Node* deleteMin(Node* root) {
+    if (root == NULL)
+        return NULL;
+
+    if (root->left == NULL) {
+        Node* temp = root->right;
+        delete root;
+        return temp;
+    }
+
+    root->left = deleteMin(root->left);
+    return root;
+}
+
 
 int main() {
     Node* root=NULL;

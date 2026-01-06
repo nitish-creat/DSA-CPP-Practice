@@ -21,6 +21,17 @@ void heapifyDown(int heap[], int n, int i) {
     }
 }
 
+void heapifyUp(int heap[], int i) {
+    while (i > 0) {
+        int parent = (i - 1) / 2;
+        if (heap[i] > heap[parent]) {
+            swap(heap[i], heap[parent]);
+            i = parent;
+        } else {
+            break;
+        }
+    }
+}
 
 // void hDown(int a[],int n, int i){
 //     while(true){
@@ -41,23 +52,10 @@ void heapifyDown(int heap[], int n, int i) {
 //         }
 //     }
 // }
-
-void heapifyUp(int heap[], int i) {
-    while (i > 0) {
-        int parent = (i - 1) / 2;
-        if (heap[i] > heap[parent]) {
-            swap(heap[i], heap[parent]);
-            i = parent;
-        } else {
-            break;
-        }
-    }
-}
-
 int main() {
     int n;
     cin >> n;
-
+    
     int heap[100];
     for (int i = 0; i < n; i++) {
         cin >> heap[i];

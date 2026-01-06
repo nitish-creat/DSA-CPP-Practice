@@ -21,7 +21,7 @@ class Queue{
             return;
         }
         if(front == -1){
-            front =0;
+            front = 0;
         }
         rear++;
         arr[rear]=val;
