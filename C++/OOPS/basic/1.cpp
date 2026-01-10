@@ -18,6 +18,10 @@ class Hero{
     void setL(char level){
         l = level;
     }
+
+    ~Hero(){
+        cout<<"destructor is called"<<endl;
+    }
 };
 
 int main() {
@@ -36,6 +40,8 @@ int main() {
     //DYNAMICALLY ALLOCATION
     Hero *h2 =new Hero;
     h2->setL('A');
-    cout<<"Level is: "<<h2->l;
+    cout<<"Level is: "<<h2->l<<endl;
+    delete h2;
+
     return 0;
 }
